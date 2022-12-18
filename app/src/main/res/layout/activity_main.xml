@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFEF5"
+    android:orientation="horizontal"
+    android:padding="15dp"
+    android:weightSum="2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="5dp"
+        android:layout_weight="1"
+        android:gravity="center|top"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/files_in_group_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="40dp"
+            android:backgroundTint="@color/teal_700"
+            android:text="Files in Group"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/checkin_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="40dp"
+            android:backgroundTint="@color/teal_700"
+            android:text="Check-in File"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/upload_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="40dp"
+            android:backgroundTint="@color/teal_700"
+            android:text="Upload File"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/checkout_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="40dp"
+            android:backgroundTint="@color/teal_700"
+            android:text="Check-out File"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/add_file_to_group_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="40dp"
+            android:backgroundTint="@color/teal_700"
+            android:text="Add File To Group"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="5dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/all_groups_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="40dp"
+            android:backgroundTint="@color/teal_700"
+            android:text="All Groups"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/all_users_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="40dp"
+            android:backgroundTint="@color/teal_700"
+            android:text="All Users"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/join_group_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="40dp"
+            android:backgroundTint="@color/teal_700"
+            android:text="join group"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/all_files_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="40dp"
+            android:backgroundTint="@color/teal_700"
+            android:text="All Files"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/remove_file_from_group_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="40dp"
+            android:backgroundTint="@color/teal_700"
+            android:text="Remove file from group"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+
+</LinearLayout>

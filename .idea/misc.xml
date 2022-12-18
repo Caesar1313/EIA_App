@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/EIA_App/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/EIA_App/app/src/main/res/layout/add_file_to_group_dialog.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/EIA_App/app/src/main/res/layout/auth_activity.xml" value="0.253125" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/EIA_App/app/src/main/res/layout/checkin_dialog.xml" value="0.2" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/EIA_App/app/src/main/res/layout/checkout_dialog.xml" value="0.253125" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/EIA_App/app/src/main/res/layout/content_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/EIA_App/app/src/main/res/layout/files_in_group_dialog.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/EIA_App/app/src/main/res/layout/fragment_first.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/EIA_App/app/src/main/res/layout/fragment_second.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/EIA_App/app/src/main/res/layout/join_group_dialog.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/EIA_App/app/src/main/res/layout/login_layout.xml" value="0.2" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/EIA_App/app/src/main/res/layout/remove_file_from_group_dialog.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/EIA_App/app/src/main/res/layout/signup_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/EIA_App/app/src/main/res/menu/menu_main.xml" value="0.25416666666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
