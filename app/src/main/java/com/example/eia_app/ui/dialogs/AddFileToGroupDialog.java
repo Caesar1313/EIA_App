@@ -1,5 +1,7 @@
 package com.example.eia_app.ui.dialogs;
 
+import static com.example.eia_app.config.AppSharedPreferences.GET_USER_ID;
+
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
@@ -23,7 +25,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class AddFileToGroupDialog extends Dialog implements View.OnClickListener{
+public class AddFileToGroupDialog extends Dialog implements View.OnClickListener {
 
     EditText groupId;
     EditText fileId;
@@ -35,7 +37,7 @@ public class AddFileToGroupDialog extends Dialog implements View.OnClickListener
         init();
     }
 
-    private void init(){
+    private void init() {
         groupId = findViewById(R.id.group_id);
         fileId = findViewById(R.id.file_id);
         addFileToGroupBtn = findViewById(R.id.add_btn);
@@ -55,10 +57,11 @@ public class AddFileToGroupDialog extends Dialog implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        APIClient.getAPI().addFileToGroup(Long.parseLong(fileId.getText().toString()), Long.parseLong(groupId.getText().toString())).enqueue(new Callback<ResponseBody>() {
+        APIClient.getAPI().addFileToGroup(Long.parseLong(fileId.getText().toString()),
+                Long.parseLong(groupId.getText().toString()), GET_USER_ID()).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                if(response.isSuccessful()){
+                if (response.isSuccessful()) {
                     Toast.makeText(getContext(), "File added to group", Toast.LENGTH_SHORT).show();
                     dismiss();
                 } else

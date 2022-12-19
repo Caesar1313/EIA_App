@@ -31,7 +31,7 @@ public interface APIInterface {
 
     @Multipart
     @POST("/uploadFile/owner/{owner_id}")
-    Call<String> uploadFile(@Part("file") MultipartBody.Part file, @Path("owner_id") int ownerId);
+    Call<String> uploadFile(@Part MultipartBody.Part file, @Path("owner_id") Long ownerId);
 
     @GET("/api/person/all/users")
     Call<List<String>> getAllUsers();
@@ -40,7 +40,7 @@ public interface APIInterface {
     Call<List<String>> getAllGroups();
 
     @GET("api/file/check-in")
-    Call<ResponseBody> checkinFile(@Query("nameFile") String fileName);
+    Call<ResponseBody> checkinFile(@Query("nameFile") String fileName,@Query("userId") Long userId);
 
     @GET("api/file/files/in/group/{group_id}")
     Call<List<String>> getFilesInGroup(@Path("group_id") Long groupId);
@@ -52,8 +52,12 @@ public interface APIInterface {
     Call<List<String>> getAllFiles();
 
     @POST("api/file/group")
-    Call<ResponseBody> addFileToGroup(@Query("file_id") Long fileId, @Query("group_id") Long groupId);
+    Call<ResponseBody> addFileToGroup(@Query("file_id") Long fileId, @Query("group_id") Long groupId,@Query("userId")Long userId);
 
     @DELETE("api/file/group")
     Call<ResponseBody> removeFileFromGroup(@Query("file_id") Long fileId, @Query("group_id") Long groupId);
+
+
+    @PUT("api/file/check-out")
+    Call<ResponseBody> checkOutFile(@Part MultipartBody.Part file,@Query("userId") Long userId);
 }

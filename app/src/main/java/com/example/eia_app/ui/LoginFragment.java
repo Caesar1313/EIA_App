@@ -1,7 +1,9 @@
 package com.example.eia_app.ui;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -16,6 +21,7 @@ import androidx.fragment.app.Fragment;
 import com.example.eia_app.R;
 import com.example.eia_app.api.APIClient;
 import com.example.eia_app.config.AppSharedPreferences;
+import com.example.eia_app.helper.FileHelper;
 import com.example.eia_app.models.LoginResponseModel;
 import com.google.gson.JsonObject;
 
@@ -32,6 +38,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
 
     View view;
 
+    Button testFiles;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -44,8 +51,24 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
         username = view.findViewById(R.id.login_username);
         password = view.findViewById(R.id.login_password);
         loginBtn = view.findViewById(R.id.login_button);
+        testFiles = view.findViewById(R.id.test);
+        testFiles.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FileHelper.getInstance().init(requireActivity());
+                FileHelper.getInstance().setLauncher(launcher);
+                FileHelper.getInstance().pickFile("*/*");
+            }
+        });
         loginBtn.setOnClickListener(this);
     }
+
+    private final ActivityResultLauncher<String> launcher = registerForActivityResult(new ActivityResultContracts.GetContent(), new ActivityResultCallback<Uri>() {
+        @Override
+        public void onActivityResult(Uri result) {
+        }
+    });
+
 
     private JsonObject getLoginJsonObject(){
         JsonObject jsonObject = new JsonObject();

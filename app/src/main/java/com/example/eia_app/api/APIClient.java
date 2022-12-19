@@ -6,6 +6,9 @@ import android.annotation.SuppressLint;
 
 import androidx.annotation.NonNull;
 
+import com.example.eia_app.App;
+import com.readystatesoftware.chuck.ChuckInterceptor;
+
 import java.io.IOException;
 import java.security.SecureRandom;
 import java.security.cert.CertificateException;
@@ -34,15 +37,11 @@ public class APIClient {
 
     private static TokenInterceptor interceptor = new TokenInterceptor();
 
-    public static OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new Interceptor() {
-        @NonNull
-        @Override
-        public Response intercept(Chain chain) throws IOException {
-            Request newRequest  = chain.request().newBuilder()
-                    .addHeader("Authorization", "Bearer " + GET_ACC_TOKEN())
-                    .build();
-            return chain.proceed(newRequest);
-        }
+    public static OkHttpClient client = new OkHttpClient.Builder().addInterceptor(chain -> {
+        Request newRequest = chain.request().newBuilder()
+                .addHeader("Authorization", "Bearer " + GET_ACC_TOKEN())
+                .build();
+        return chain.proceed(newRequest);
     }).build();
 
     public static Retrofit getRetrofitInstance() {
@@ -87,13 +86,12 @@ public class APIClient {
             builder.sslSocketFactory(sSLSocketFactory, (X509TrustManager) arrayOfTrustManager[0]);
             HostnameVerifier hostnameVerifier = (param1String, param1SSLSession) -> true;
             builder.hostnameVerifier(hostnameVerifier);
-            builder.addInterceptor(interceptor);
-
             builder.connectTimeout(30, TimeUnit.SECONDS);
             builder.readTimeout(30, TimeUnit.SECONDS);
             builder.writeTimeout(30, TimeUnit.SECONDS);
-
-            return builder.addInterceptor(interceptor).build();
+            builder.addInterceptor(new ChuckInterceptor(App.getContext()));
+            builder.addInterceptor(interceptor);
+            return builder.build();
         } catch (Exception exception) {
             throw new RuntimeException(exception);
         }

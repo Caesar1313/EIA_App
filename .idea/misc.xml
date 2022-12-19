@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudioProjects/Eia/EIA_App/app/src/main/res/layout/activity_main.xml" value="0.13171225937183384" />
+        <entry key="..\:/AndroidStudioProjects/Eia/EIA_App/app/src/main/res/layout/auth_activity.xml" value="0.22327898550724637" />
+        <entry key="..\:/AndroidStudioProjects/Eia/EIA_App/app/src/main/res/layout/login_layout.xml" value="0.22327898550724637" />
+        <entry key="..\:/AndroidStudioProjects/Eia/EIA_App/app/src/main/res/layout/signup_layout.xml" value="0.12395833333333334" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/EIA_App/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/EIA_App/app/src/main/res/layout/add_file_to_group_dialog.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/EIA_App/app/src/main/res/layout/auth_activity.xml" value="0.253125" />

@@ -1,5 +1,7 @@
 package com.example.eia_app.ui.dialogs;
 
+import static com.example.eia_app.config.AppSharedPreferences.GET_USER_ID;
+
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
@@ -54,7 +56,7 @@ public class CheckinDialog extends Dialog implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        APIClient.getAPI().checkinFile(fileName.getText().toString()).enqueue(new Callback<ResponseBody>() {
+        APIClient.getAPI().checkinFile(fileName.getText().toString(),GET_USER_ID()).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if(response.isSuccessful()){
